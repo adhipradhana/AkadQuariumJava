@@ -1,0 +1,172 @@
+\hypertarget{class_snail}{}\section{Snail Class Reference}
+\label{class_snail}\index{Snail@{Snail}}
+
+
+Inheritance diagram for Snail\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_snail__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Snail\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_snail__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_snail_a99cf307667441615ed79de2fd4ba5fe5}{set\+Money}} (final \mbox{\hyperlink{class_node}{Node}}$<$ Integer $>$ p\+Money)
+\item 
+double \mbox{\hyperlink{class_snail_a6b26b21e7bf3702c9e263cae1a9bc3ad}{get\+Radius}} ()
+\item 
+\mbox{\hyperlink{class_node}{Node}}$<$ Integer $>$ \mbox{\hyperlink{class_snail_ad57c8cb98f65b980483ce326bc7e6031}{get\+Money}} ()
+\item 
+void \mbox{\hyperlink{class_snail_ad077a58207472113fae8ec37696d83e3}{grab\+Coin}} (final \mbox{\hyperlink{class_coin}{Coin}} coin)
+\item 
+void \mbox{\hyperlink{class_snail_a88ef832abb1c54f196242d47431ff866}{move}} (final Graphics g)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_snail_a0c21e4603e41e352e2d3d91d172e0b9e}{set\+List\+Coin}} (final \mbox{\hyperlink{class_linked_list}{Linked\+List}}$<$ \mbox{\hyperlink{class_coin}{Coin}} $>$ p\+List\+Coin)
+\item 
+static void \mbox{\hyperlink{class_snail_a90cd994cbdd5daae66bade7702472dac}{set\+Snail\+Left}} (final Buffered\+Image p\+Snail\+Left)
+\item 
+static void \mbox{\hyperlink{class_snail_a604a57abe628e6f708d61365630fdc9e}{set\+Snail\+Right}} (final Buffered\+Image p\+Snail\+Right)
+\item 
+static \mbox{\hyperlink{class_linked_list}{Linked\+List}}$<$ \mbox{\hyperlink{class_coin}{Coin}} $>$ \mbox{\hyperlink{class_snail_ae777445d6e995a27c4049fbf9a51c7a5}{get\+List\+Coin}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \mbox{\hyperlink{class_snail}{Snail}}. This class is derived from \mbox{\hyperlink{class_aquarium_object}{Aquarium\+Object}}. \mbox{\hyperlink{class_snail}{Snail}} is an aquarium object that collects coin. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_snail_ae777445d6e995a27c4049fbf9a51c7a5}\label{class_snail_ae777445d6e995a27c4049fbf9a51c7a5}} 
+\index{Snail@{Snail}!get\+List\+Coin@{get\+List\+Coin}}
+\index{get\+List\+Coin@{get\+List\+Coin}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{get\+List\+Coin()}{getListCoin()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_linked_list}{Linked\+List}}$<$\mbox{\hyperlink{class_coin}{Coin}}$>$ Snail.\+get\+List\+Coin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Get list of coin.
+
+\begin{DoxyReturn}{Returns}
+list of coin 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snail_ad57c8cb98f65b980483ce326bc7e6031}\label{class_snail_ad57c8cb98f65b980483ce326bc7e6031}} 
+\index{Snail@{Snail}!get\+Money@{get\+Money}}
+\index{get\+Money@{get\+Money}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{get\+Money()}{getMoney()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_node}{Node}}$<$Integer$>$ Snail.\+get\+Money (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get money.
+
+\begin{DoxyReturn}{Returns}
+node of money 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snail_a6b26b21e7bf3702c9e263cae1a9bc3ad}\label{class_snail_a6b26b21e7bf3702c9e263cae1a9bc3ad}} 
+\index{Snail@{Snail}!get\+Radius@{get\+Radius}}
+\index{get\+Radius@{get\+Radius}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{get\+Radius()}{getRadius()}}
+{\footnotesize\ttfamily double Snail.\+get\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get snail radius.
+
+\begin{DoxyReturn}{Returns}
+snail radius 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snail_ad077a58207472113fae8ec37696d83e3}\label{class_snail_ad077a58207472113fae8ec37696d83e3}} 
+\index{Snail@{Snail}!grab\+Coin@{grab\+Coin}}
+\index{grab\+Coin@{grab\+Coin}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{grab\+Coin()}{grabCoin()}}
+{\footnotesize\ttfamily void Snail.\+grab\+Coin (\begin{DoxyParamCaption}\item[{final \mbox{\hyperlink{class_coin}{Coin}}}]{coin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method is used to grab the coin.
+
+
+\begin{DoxyParams}{Parameters}
+{\em coin} & is the coin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_snail_a88ef832abb1c54f196242d47431ff866}\label{class_snail_a88ef832abb1c54f196242d47431ff866}} 
+\index{Snail@{Snail}!move@{move}}
+\index{move@{move}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Snail.\+move (\begin{DoxyParamCaption}\item[{final Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method is used to move the object. \mbox{\hyperlink{class_snail}{Snail}}\textquotesingle{}s movements are described as below\+:
+\begin{DoxyEnumerate}
+\item If there is coin available, \mbox{\hyperlink{class_snail}{Snail}} will move towards the nearest coin.
+\item If there is no coin available, \mbox{\hyperlink{class_snail}{Snail}} will just stay at its current location.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & is Graphics \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_snail_a0c21e4603e41e352e2d3d91d172e0b9e}\label{class_snail_a0c21e4603e41e352e2d3d91d172e0b9e}} 
+\index{Snail@{Snail}!set\+List\+Coin@{set\+List\+Coin}}
+\index{set\+List\+Coin@{set\+List\+Coin}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{set\+List\+Coin()}{setListCoin()}}
+{\footnotesize\ttfamily static void Snail.\+set\+List\+Coin (\begin{DoxyParamCaption}\item[{final \mbox{\hyperlink{class_linked_list}{Linked\+List}}$<$ \mbox{\hyperlink{class_coin}{Coin}} $>$}]{p\+List\+Coin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Set list of coin.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+List\+Coin} & is list of coin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_snail_a99cf307667441615ed79de2fd4ba5fe5}\label{class_snail_a99cf307667441615ed79de2fd4ba5fe5}} 
+\index{Snail@{Snail}!set\+Money@{set\+Money}}
+\index{set\+Money@{set\+Money}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{set\+Money()}{setMoney()}}
+{\footnotesize\ttfamily void Snail.\+set\+Money (\begin{DoxyParamCaption}\item[{final \mbox{\hyperlink{class_node}{Node}}$<$ Integer $>$}]{p\+Money }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set money.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Money} & is money \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_snail_a90cd994cbdd5daae66bade7702472dac}\label{class_snail_a90cd994cbdd5daae66bade7702472dac}} 
+\index{Snail@{Snail}!set\+Snail\+Left@{set\+Snail\+Left}}
+\index{set\+Snail\+Left@{set\+Snail\+Left}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{set\+Snail\+Left()}{setSnailLeft()}}
+{\footnotesize\ttfamily static void Snail.\+set\+Snail\+Left (\begin{DoxyParamCaption}\item[{final Buffered\+Image}]{p\+Snail\+Left }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Set image of \mbox{\hyperlink{class_snail}{Snail}} facing left.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Snail\+Left} & is Buffered\+Image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_snail_a604a57abe628e6f708d61365630fdc9e}\label{class_snail_a604a57abe628e6f708d61365630fdc9e}} 
+\index{Snail@{Snail}!set\+Snail\+Right@{set\+Snail\+Right}}
+\index{set\+Snail\+Right@{set\+Snail\+Right}!Snail@{Snail}}
+\subsubsection{\texorpdfstring{set\+Snail\+Right()}{setSnailRight()}}
+{\footnotesize\ttfamily static void Snail.\+set\+Snail\+Right (\begin{DoxyParamCaption}\item[{final Buffered\+Image}]{p\+Snail\+Right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Set image of \mbox{\hyperlink{class_snail}{Snail}} facing right.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Snail\+Right} & is Buffered\+Image \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/media/malfianrasyidin/\+A\+L\+F\+I\+A\+N/java/\+Arkav\+Quarium\+Java/src/Snail.\+java\end{DoxyCompactItemize}
