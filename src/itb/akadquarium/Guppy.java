@@ -34,6 +34,18 @@ public class Guppy extends AquariumObject implements Fish {
     private static final int COIN_DROP_VALUE = 7;
     private static final double RADIUS = 40;
     private static final double VELOCITY = 1;
+
+    private static final int MAX_TARGET_X = 1000;
+    private static final int OFFSET_X = 40;
+    private static final int MAX_TARGET_Y = 550;
+    private static final int Y_LOWER_BOUND = 120;
+    private static final int STATE_BOUND = 3;
+    private static final double HUNGRY_SPEED_MULTIPLIER = 1.5;
+    private static final int DECREASE_HUNGER_TIME = 1000;
+    private static final int MOVE_TIME = 3000;
+    private static final int SCREEN_WIDTH = 1080;
+    private static final int MINIMUM_DISTANCE = 200;
+
     private static BufferedImage stateOneGuppyLeft;
     private static BufferedImage stateOneGuppyRight;
     private static BufferedImage stateTwoGuppyLeft;
@@ -53,10 +65,10 @@ public class Guppy extends AquariumObject implements Fish {
         this.lastHungerTime = getTimeNow();
         this.lastMoveTime = getTimeNow();
         Random rand = new Random();
-        this.targetX = rand.nextInt(1000) + 40;
-        this.targetY = rand.nextInt(550) + 120;
-        this.setXi(rand.nextInt(1000) + 40);
-        this.setYi(rand.nextInt(550) + 120);
+        this.targetX = rand.nextInt(MAX_TARGET_X) + OFFSET_X;
+        this.targetY = rand.nextInt(MAX_TARGET_Y) + Y_LOWER_BOUND;
+        this.setXi(rand.nextInt(MAX_TARGET_X) + OFFSET_X);
+        this.setYi(rand.nextInt(MAX_TARGET_Y) + Y_LOWER_BOUND);
     }
 
     /**
@@ -333,8 +345,8 @@ public class Guppy extends AquariumObject implements Fish {
         setHunger(MAX_HUNGER);
         setTimesEaten(getTimesEaten() + 1);
 
-        if ((getTimesEaten() != 0) && (getTimesEaten() % 3 == 0)
-                && (getState() < 3)) {
+        if ((getTimesEaten() != 0) && (getTimesEaten() % STATE_BOUND == 0)
+                && (getState() < STATE_BOUND)) {
             setState(getState() + 1);
         }
     }
@@ -366,12 +378,13 @@ public class Guppy extends AquariumObject implements Fish {
      */
     @Override
     void move(final Graphics g) {
-        if (getTimeNow() - lastHungerTime >= 1000) {
+        if (getTimeNow() - lastHungerTime >= DECREASE_HUNGER_TIME) {
             setHunger(getHunger() - 1);
             lastHungerTime = getTimeNow();
         }
 
-        if (getTimeNow() - lastDropTime >= Guppy.DROP_TIME * 1000) {
+        if (getTimeNow() - lastDropTime >= Guppy.DROP_TIME
+                * DECREASE_HUNGER_TIME) {
             dropCoin();
         }
 
@@ -399,8 +412,10 @@ public class Guppy extends AquariumObject implements Fish {
             double angle = Math.atan2(targetFood.getYi() - this.getYi(),
                     targetFood.getXi() - this.getXi());
 
-            this.setXi(getXi() + Guppy.VELOCITY * (1.5) * Math.cos(angle) * 1);
-            this.setYi(getYi() + Guppy.VELOCITY * (1.5) * Math.sin(angle) * 1);
+            this.setXi(getXi() + Guppy.VELOCITY * (HUNGRY_SPEED_MULTIPLIER)
+                    * Math.cos(angle) * 1);
+            this.setYi(getYi() + Guppy.VELOCITY * (HUNGRY_SPEED_MULTIPLIER)
+                    * Math.sin(angle) * 1);
 
             if (Math.cos(angle) >= 0) {
                 drawGuppy(g, stateOneGuppyRight,
@@ -414,15 +429,15 @@ public class Guppy extends AquariumObject implements Fish {
                 eat();
             }
         } else {
-            if (getTimeNow() - lastMoveTime >= 3000) {
+            if (getTimeNow() - lastMoveTime >= MOVE_TIME) {
                 Random rand = new Random();
-                targetX = rand.nextInt(1080);
-                while (Math.abs(targetX - getXi()) < 200) {
-                    targetX = rand.nextInt(1080);
+                targetX = rand.nextInt(SCREEN_WIDTH);
+                while (Math.abs(targetX - getXi()) < MINIMUM_DISTANCE) {
+                    targetX = rand.nextInt(SCREEN_WIDTH);
                 }
-                targetY = rand.nextInt(550) + 120;
-                while (Math.abs(targetY - getYi()) < 200) {
-                    targetY = rand.nextInt(550) + 120;
+                targetY = rand.nextInt(MAX_TARGET_Y) + Y_LOWER_BOUND;
+                while (Math.abs(targetY - getYi()) < MINIMUM_DISTANCE) {
+                    targetY = rand.nextInt(MAX_TARGET_Y) + Y_LOWER_BOUND;
                 }
                 lastMoveTime = getTimeNow();
             }

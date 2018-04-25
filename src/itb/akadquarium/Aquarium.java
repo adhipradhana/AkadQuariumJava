@@ -19,12 +19,33 @@ import javax.swing.JPanel;
  * This class instantiates itb.akadquarium.Aquarium.
  */
 public class Aquarium extends JPanel implements MouseListener {
+    /**
+     * Mouse position on screen (horizontal).
+     */
     private int xClick;
+    /**
+     * Mouse position on screen (vertical).
+     */
     private int yClick;
+    /**
+     * State of egg.
+     */
     private int eggState;
+    /**
+     * Marks running.
+     */
     private boolean run;
+    /**
+     * Marks paused.
+     */
     private boolean paused;
+    /**
+     * Marks saving a file.
+     */
     private boolean accessSave;
+    /**
+     * Mo
+     */
     private Node<Integer> money;
     private static Font fontType;
 

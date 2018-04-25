@@ -29,6 +29,15 @@ public class Piranha extends AquariumObject implements Fish {
     private static final double RADIUS = 40;
     private static BufferedImage piranhaLeft;
     private static BufferedImage piranhaRight;
+    private static final int MAX_TARGET_X = 1000;
+    private static final int OFFSET_X = 40;
+    private static final int MAX_TARGET_Y = 550;
+    private static final int Y_LOWER_BOUND = 120;
+    private static final double HUNGRY_SPEED_MULTIPLIER = 1.5;
+    private static final int DECREASE_HUNGER_TIME = 1000;
+    private static final int MOVE_TIME = 3000;
+    private static final int SCREEN_WIDTH = 1080;
+    private static final int MINIMUM_DISTANCE = 200;
 
     /**
      * Instantiate itb.akadquarium.Piranha.
@@ -39,10 +48,10 @@ public class Piranha extends AquariumObject implements Fish {
         this.lastHungerTime = getTimeNow();
         this.lastMoveTime = getTimeNow();
         Random rand = new Random();
-        this.targetX = rand.nextInt(1000) + 40;
-        this.targetY = rand.nextInt(550)  + 120;
-        this.setYi(rand.nextInt(550) + 120);
-        this.setXi(rand.nextInt(1000) + 40);
+        this.targetX = rand.nextInt(MAX_TARGET_X) + OFFSET_X;
+        this.targetY = rand.nextInt(MAX_TARGET_Y)  + Y_LOWER_BOUND;
+        this.setYi(rand.nextInt(MAX_TARGET_Y) + Y_LOWER_BOUND);
+        this.setXi(rand.nextInt(MAX_TARGET_X) + OFFSET_X);
     }
 
     /**
@@ -233,7 +242,7 @@ public class Piranha extends AquariumObject implements Fish {
     @Override
     public void move(final Graphics g) {
         // Decreasing hunger
-        if (getTimeNow() - this.lastHungerTime >= 1000) {
+        if (getTimeNow() - this.lastHungerTime >= DECREASE_HUNGER_TIME) {
             setHunger(getHunger() - 1);
             this.lastHungerTime = getTimeNow();
         }
@@ -268,8 +277,10 @@ public class Piranha extends AquariumObject implements Fish {
             double angle = Math.atan2(targetFood.getYi() - this.getYi(),
                     targetFood.getXi() - this.getXi());
 
-            this.setXi(getXi() + VELOCITY * (1.5) * Math.cos(angle) * 1);
-            this.setYi(getYi() + VELOCITY * (1.5) * Math.sin(angle) * 1);
+            this.setXi(getXi() + VELOCITY * (HUNGRY_SPEED_MULTIPLIER)
+                    * Math.cos(angle) * 1);
+            this.setYi(getYi() + VELOCITY * (HUNGRY_SPEED_MULTIPLIER)
+                    * Math.sin(angle) * 1);
 
             if (Math.cos(angle) >= 0) {
                 draw(g, piranhaRight);
@@ -283,15 +294,15 @@ public class Piranha extends AquariumObject implements Fish {
             }
         } else {
             // itb.akadquarium.Piranha moves randomly
-            if (getTimeNow() - lastMoveTime >= 3000) {
+            if (getTimeNow() - lastMoveTime >= MOVE_TIME) {
                 Random rand = new Random();
-                this.targetX = rand.nextInt(1080);
-                while (Math.abs(targetX - this.getXi()) < 200) {
-                    targetX = rand.nextInt(1080);
+                this.targetX = rand.nextInt(SCREEN_WIDTH);
+                while (Math.abs(targetX - this.getXi()) < MINIMUM_DISTANCE) {
+                    targetX = rand.nextInt(SCREEN_WIDTH);
                 }
-                this.targetY = rand.nextInt(550) + 120;
-                while (Math.abs(targetY - this.getYi()) < 200) {
-                    targetY = rand.nextInt(550) + 120;
+                this.targetY = rand.nextInt(MAX_TARGET_Y) + Y_LOWER_BOUND;
+                while (Math.abs(targetY - this.getYi()) < MINIMUM_DISTANCE) {
+                    targetY = rand.nextInt(MAX_TARGET_Y) + Y_LOWER_BOUND;
                 }
                 lastMoveTime = getTimeNow();
             }

@@ -23,6 +23,9 @@ public final class Main {
     private static AudioInputStream audioIn;
     private static final int WINDOW_WIDTH = 1100;
     private static final int WINDOW_HEIGHT = 720;
+    private static final int NANO_SECONDS = 1000000;
+    private static final int THOUSAND = 1000;
+    private static final int FRAME_PER_SECOND = 45;
 
     /**
      * Default constructor.
@@ -52,13 +55,13 @@ public final class Main {
         long begin;
         long diff;
         long sleep;
-        int fps = 1000 / 45;
+        int fps = THOUSAND / FRAME_PER_SECOND;
 
         jFrame.invalidate();
         jFrame.validate();
-        begin = System.nanoTime() / 1000000;
+        begin = System.nanoTime() / NANO_SECONDS;
         jFrame.repaint();
-        diff = System.nanoTime() / 1000000 - begin;
+        diff = System.nanoTime() / NANO_SECONDS - begin;
         sleep = fps - (int) diff;
         try {
             Thread.sleep(sleep);
