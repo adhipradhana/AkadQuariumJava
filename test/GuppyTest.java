@@ -66,7 +66,7 @@ class GuppyTest {
     void equals() {
         Guppy guppy = new Guppy();
         guppy.setLastHungerTime(1000);
-        assertTrue(guppy.equals(guppy));
+        assertEquals(guppy, guppy);
     }
 
     @Test

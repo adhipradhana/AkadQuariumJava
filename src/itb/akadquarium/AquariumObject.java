@@ -11,7 +11,14 @@ import java.time.Clock;
  * itb.akadquarium.Snail, itb.akadquarium.FishFood, etc
  */
 public abstract class AquariumObject {
-    private double x, y;
+    /**
+     * x coordinate of aquarium object.
+     */
+    private double x;
+    /**
+     * y coordinate of aquarium object.
+     */
+    private double y;
 
     /**
      * Set the abscissa.

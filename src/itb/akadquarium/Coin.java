@@ -10,13 +10,37 @@ import java.awt.image.BufferedImage;
  * Furthermore, coins are produced by all derived class of itb.akadquarium.Fish
  */
 public class Coin extends AquariumObject {
+    /**
+     * value.
+     */
     private final int value;
+    /**
+     * coin image.
+     */
     private static BufferedImage imageCoin;
+    /**
+     * diamond image.
+     */
     private static BufferedImage imageDiamond;
+    /**
+     * list coin.
+     */
     private static LinkedList<Coin> listCoin;
+    /**
+     * min diamond.
+     */
     private static final int MIN_DIAMOND = 20;
+    /**
+     * low bound.
+     */
     private static final int LOW_BOUNDARY = 575;
+    /**
+     * radius.
+     */
     private static final double RADIUS = 25;
+    /**
+     * velocity.
+     */
     private static final double VELOCITY = 0.5;
 
     /**

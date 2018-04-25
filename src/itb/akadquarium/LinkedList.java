@@ -7,7 +7,13 @@ package itb.akadquarium;
  * @param <T> is the parameter type
  */
 public class LinkedList<T> {
+    /**
+     * element count in list.
+     */
     private int count;
+    /**
+     * first element on list.
+     */
     private Node<T> first;
 
     /**

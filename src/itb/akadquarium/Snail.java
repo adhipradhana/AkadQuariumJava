@@ -9,11 +9,29 @@ import java.awt.image.BufferedImage;
  * itb.akadquarium.Snail is an aquarium object that collects coin.
  */
 public class Snail extends AquariumObject {
+    /**
+     * money.
+     */
     private Node<Integer> money;
+    /**
+     * snail left image.
+     */
     private static BufferedImage snailLeft;
+    /**
+     * snail right image.
+     */
     private static BufferedImage snailRight;
+    /**
+     * radius.
+     */
     private static final double RADIUS = 30;
+    /**
+     * velocity.
+     */
     private static final double VELOCITY = 1;
+    /**
+     * list coin.
+     */
     private static LinkedList<Coin> listCoin;
 
     /**

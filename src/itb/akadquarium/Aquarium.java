@@ -20,6 +20,70 @@ import javax.swing.JPanel;
  */
 public class Aquarium extends JPanel implements MouseListener {
     /**
+     * Main area.
+     */
+    public static final int MAIN_AREA = 90;
+    /**
+     * biggest font size.
+     */
+    public static final int BIG_FONT_SIZE = 50;
+    /**
+     * state one.
+     */
+    public static final int EGG_STATE_1 = 1;
+    /**
+     * state two.
+     */
+    public static final int EGG_STATE_2 = 2;
+    /**
+     * state three.
+     */
+    public static final int EGG_STATE_3 = 3;
+    /**
+     * y fish food.
+     */
+    public static final int Y_FISH_FOOD = 115;
+    /**
+     * x guppy high.
+     */
+    public static final int X_GUPPY_HIGH = 120;
+    /**
+     * x guppy low.
+     */
+    public static final int X_GUPPY_LOW = 35;
+    /**
+     * x piranha low.
+     */
+    public static final int X_PIRANHA_LOW = 160;
+    /**
+     * x piranha high.
+     */
+    public static final int X_PIRANHA_HIGH = 235;
+    /**
+     * x egg low.
+     */
+    public static final int X_EGG_LOW = 255;
+    /**
+     * x egg high.
+     */
+    public static final int X_EGG_HIGH = 333;
+    /**
+     * x menu low.
+     */
+    public static final int X_MENU_LOW = 935;
+    /**
+     * x menu high.
+     */
+    public static final int X_MENU_HIGH = 1000;
+    /**
+     * smallest font size.
+     */
+    public static final int SMALLEST_FONT_SIZE = 10;
+    /**
+     * win state.
+     */
+    public static final int WIN_STATE = 4;
+    /**
      * Mouse position on screen (horizontal).
      */
     private int xClick;
@@ -44,46 +108,152 @@ public class Aquarium extends JPanel implements MouseListener {
      */
     private boolean accessSave;
     /**
-     * Mo
+     * player money.
      */
     private Node<Integer> money;
+    /**
+     * font type.
+     */
     private static Font fontType;
-
+    /**
+     * snail.
+     */
     private Snail snail;
+    /**
+     * list coin.
+     */
     private LinkedList<Coin> listCoin;
+    /**
+     * list guppy.
+     */
     private LinkedList<Guppy> listGuppy;
+    /**
+     * list piranha.
+     */
     private LinkedList<Piranha> listPiranha;
+    /**
+     * list fish food.
+     */
     private LinkedList<FishFood> listFishFood;
-
+    /**
+     * background image.
+     */
     private static BufferedImage background;
+    /**
+     * egg one image.
+     */
     private static BufferedImage eggPictureOne;
+    /**
+     * egg two image.
+     */
     private static BufferedImage eggPictureTwo;
+    /**
+     * win background.
+     */
     private static BufferedImage winBackground;
+    /**
+     * menu background.
+     */
     private static BufferedImage menuBackground;
+    /**
+     * lose background.
+     */
     private static BufferedImage loseBackground;
+    /**
+     * egg picture three.
+     */
     private static BufferedImage eggPictureThree;
-
+    /**
+     * egg y.
+     */
     private static final Integer EGG_Y = 5;
+    /**
+     * egg x.
+     */
     private static final Integer EGG_X = 270;
+    /**
+     * money y.
+     */
     private static final Integer MONEY_Y = 85;
+    /**
+     * money x.
+     */
     private static final Integer MONEY_X = 940;
+    /**
+     * money value init.
+     */
     private static final Integer INIT_MONEY = 25;
-    private static final Integer GUPPY_VALUE = 15;
+    /**
+     * small font size.
+     */
+    public static final int SMALL_FONT_SIZE = 15;
+    /**
+     * guppy value.
+     */
+    private static final Integer GUPPY_VALUE = SMALL_FONT_SIZE;
+    /**
+     * str state x.
+     */
     private static final Integer STR_STATE_X = 400;
+    /**
+     * str stat y.
+     */
     private static final Integer STR_STATE_Y = 475;
+    /**
+     * text pos.
+     */
     private static final Integer TEXT_POS = 350;
+    /**
+     * num one x.
+     */
     private static final Integer NUM_ONE_X = 315;
+    /**
+     * num one y.
+     */
     private static final Integer NUM_ONE_Y = 650;
+    /**
+     * piranha value.
+     */
     private static final Integer PIRANHA_VALUE = 30;
+    /**
+     * fish food value.
+     */
     private static final Integer FISHFOOD_VALUE = 5;
+    /**
+     * init snail x.
+     */
     private static final Integer INIT_SNAIL_X = 320;
+    /**
+     * init snail y.
+     */
     private static final Integer INIT_SNAIL_Y = 575;
+    /**
+     * first egg value.
+     */
     private static final Integer FIRST_EGG_VALUE = 100;
+    /**
+     * second egg value.
+     */
     private static final Integer SECOND_EGG_VALUE = 150;
+    /**
+     * third egg value.
+     */
     private static final Integer THIRD_EGG_VALUE = 250;
+    /**
+     * item y.
+     */
     private static final Integer ITEM_Y = 87;
+    /**
+     * guppy value x.
+     */
     private static final Integer GUPPY_VALUE_X = 70;
+    /**
+     * piranha value x.
+     */
     private static final Integer PIRANHA_VALUE_X = 185;
+    /**
+     * egg value x.
+     */
     private static final Integer EGG_VALUE_X = 280;
 
     /**
@@ -480,11 +650,12 @@ public class Aquarium extends JPanel implements MouseListener {
      */
     private void drawWin(final Graphics g) {
         g.drawImage(winBackground,
-                getWidth() / 2 - winBackground.getWidth() / 2,
-                getHeight() / 2
-                        - winBackground.getHeight() / 2,
+                getWidth() / EGG_STATE_2 - winBackground.getWidth()
+                        / EGG_STATE_2,
+                getHeight() / EGG_STATE_2
+                        - winBackground.getHeight() / EGG_STATE_2,
                 null);
-        Font font = fontType.deriveFont((float) 50);
+        Font font = fontType.deriveFont((float) BIG_FONT_SIZE);
         g.setFont(font);
         g.setColor(Color.GREEN);
 
@@ -498,11 +669,12 @@ public class Aquarium extends JPanel implements MouseListener {
      */
     private void drawLose(final Graphics g) {
         g.drawImage(loseBackground,
-                getWidth() / 2 - loseBackground.getWidth() / 2,
-                getHeight() / 2
-                        - loseBackground.getHeight() / 2,
+                getWidth() / EGG_STATE_2 - loseBackground.getWidth()
+                        / EGG_STATE_2,
+                getHeight() / EGG_STATE_2
+                        - loseBackground.getHeight() / EGG_STATE_2,
                 null);
-        Font font = fontType.deriveFont((float) 50);
+        Font font = fontType.deriveFont((float) BIG_FONT_SIZE);
         g.setFont(font);
         g.setColor(Color.RED);
 
@@ -515,15 +687,15 @@ public class Aquarium extends JPanel implements MouseListener {
      * @param g Graphics
      */
     private void drawEgg(final Graphics g) {
-        if (eggState == 1) {
+        if (eggState == EGG_STATE_1) {
             g.drawImage(eggPictureOne, EGG_X, EGG_Y, null);
             g.drawString(Integer.toString(FIRST_EGG_VALUE),
                     EGG_VALUE_X, ITEM_Y);
-        } else if (eggState == 2) {
+        } else if (eggState == EGG_STATE_2) {
             g.drawImage(eggPictureTwo, EGG_X, EGG_Y, null);
             g.drawString(Integer.toString(SECOND_EGG_VALUE),
                     EGG_VALUE_X, ITEM_Y);
-        } else if (eggState == 3) {
+        } else if (eggState == EGG_STATE_3) {
             g.drawImage(eggPictureThree, EGG_X, EGG_Y, null);
             g.drawString(Integer.toString(THIRD_EGG_VALUE),
                     EGG_VALUE_X, ITEM_Y);
@@ -557,17 +729,18 @@ public class Aquarium extends JPanel implements MouseListener {
         grabFocus();
         if (eggState == 0) {
             g.drawImage(menuBackground,
-                    getWidth() / 2 - menuBackground.getWidth() / 2,
-                    getHeight() / 2
-                            - menuBackground.getHeight() / 2,
+                    getWidth() / EGG_STATE_2 - menuBackground.getWidth()
+                            / EGG_STATE_2,
+                    getHeight() / EGG_STATE_2
+                            - menuBackground.getHeight() / EGG_STATE_2,
                     null);
-            Font font = fontType.deriveFont((float) 50);
+            Font font = fontType.deriveFont((float) BIG_FONT_SIZE);
             g.setFont(font);
             g.setColor(Color.WHITE);
 
             g.drawString("PLAY", STR_STATE_X, STR_STATE_Y);
 
-            g.setFont(font.deriveFont((float) 15));
+            g.setFont(font.deriveFont((float) SMALL_FONT_SIZE));
             g.drawString("PRESS NUM 1 TO LOAD GAME", NUM_ONE_X, NUM_ONE_Y);
             if (accessSave) {
                 Aquarium.loadData(this);
@@ -581,7 +754,7 @@ public class Aquarium extends JPanel implements MouseListener {
                 setyClick(0);
             }
         } else if (paused) {
-            Font font = fontType.deriveFont((float) 50);
+            Font font = fontType.deriveFont((float) BIG_FONT_SIZE);
             g.setFont(font);
             g.setColor(Color.WHITE);
 
@@ -589,7 +762,7 @@ public class Aquarium extends JPanel implements MouseListener {
 
             g.drawString("PAUSED", TEXT_POS, TEXT_POS);
 
-            g.setFont(font.deriveFont((float) 15));
+            g.setFont(font.deriveFont((float) SMALL_FONT_SIZE));
             g.drawString("PRESS NUM 1 TO SAVE GAME", NUM_ONE_X, NUM_ONE_Y);
             if (accessSave) {
                 Aquarium.saveData(this);
@@ -602,19 +775,19 @@ public class Aquarium extends JPanel implements MouseListener {
                 setxClick(0);
                 setyClick(0);
             }
-        } else if (eggState >= 1 && eggState <= 3 && run) {
-            Font font = fontType.deriveFont((float) 15);
+        } else if (eggState >= EGG_STATE_1 && eggState <= EGG_STATE_3 && run) {
+            Font font = fontType.deriveFont((float) SMALL_FONT_SIZE);
             g.setFont(font);
-            g.setColor(new Color(180, 230, 180));
+            g.setColor(Color.WHITE);
 
             // Buy things
             if (xClick != 0) {
-                if (yClick > 90) {
+                if (yClick > MAIN_AREA) {
                     boolean getCoin = false;
                     for (int i = 0; i < this.getListCoin().getCount()
                             && !getCoin; i++) {
                         if (this.getListCoin().get(i).isIntersect(
-                                xClick, yClick, 1)) {
+                                xClick, yClick, EGG_STATE_1)) {
                             money.setData(money.getData()
                                     + getListCoin().get(i).getValue());
                             getListCoin().remove(getListCoin().get(i));
@@ -625,44 +798,46 @@ public class Aquarium extends JPanel implements MouseListener {
                     }
                     if (!getCoin) {
                         if (money.getData() >= FISHFOOD_VALUE) {
-                            getListFishFood().add(new FishFood(xClick, 115));
+                            getListFishFood().add(new FishFood(xClick,
+                                    Y_FISH_FOOD));
                             money.setData(money.getData() - FISHFOOD_VALUE);
                         }
                         setxClick(0);
                         setyClick(0);
                     }
                 } else {
-                    if (xClick < 120 && xClick > 35) {
+                    if (xClick < X_GUPPY_HIGH && xClick > X_GUPPY_LOW) {
                         if (money.getData() >= GUPPY_VALUE) {
                             getListGuppy().add(new Guppy());
                             money.setData(money.getData() - GUPPY_VALUE);
                         }
                         setxClick(0);
                         setyClick(0);
-                    } else if (xClick > 160 && xClick < 235) {
+                    } else if (xClick > X_PIRANHA_LOW && xClick
+                            < X_PIRANHA_HIGH) {
                         if (money.getData() >= PIRANHA_VALUE) {
                             getListPiranha().add(new Piranha());
                             money.setData(money.getData() - PIRANHA_VALUE);
                         }
                         setxClick(0);
                         setyClick(0);
-                    } else if (xClick > 255 && xClick < 333) {
-                        if (eggState == 1
+                    } else if (xClick > X_EGG_LOW && xClick < X_EGG_HIGH) {
+                        if (eggState == EGG_STATE_1
                                 && money.getData() >= FIRST_EGG_VALUE) {
                             eggState++;
                             money.setData(money.getData() - FIRST_EGG_VALUE);
-                        } else if (eggState == 2
+                        } else if (eggState == EGG_STATE_2
                                 && money.getData() >= SECOND_EGG_VALUE) {
                             eggState++;
                             money.setData(money.getData() - SECOND_EGG_VALUE);
-                        } else if (eggState == 3
+                        } else if (eggState == EGG_STATE_3
                                 && money.getData() >= THIRD_EGG_VALUE) {
                             eggState++;
                             money.setData(money.getData() - THIRD_EGG_VALUE);
                         }
                         setxClick(0);
                         setyClick(0);
-                    } else if (xClick > 935 && xClick < 1000) {
+                    } else if (xClick > X_MENU_LOW && xClick < X_MENU_HIGH) {
                         paused = true;
                         setxClick(0);
                         setyClick(0);
@@ -674,8 +849,8 @@ public class Aquarium extends JPanel implements MouseListener {
             g.drawString(Integer.toString(money.getData()), MONEY_X, MONEY_Y);
 
             //change font
-            g.setFont(font.deriveFont((float) 10));
-            g.setColor(new Color(200, 200, 255));
+            g.setFont(font.deriveFont((float) SMALLEST_FONT_SIZE));
+            g.setColor(Color.WHITE);
 
             drawEgg(g);
             g.drawString(Integer.toString(GUPPY_VALUE), GUPPY_VALUE_X, ITEM_Y);
@@ -691,7 +866,7 @@ public class Aquarium extends JPanel implements MouseListener {
                 run = false;
             }
 
-        } else if (eggState == 4) {
+        } else if (eggState == WIN_STATE) {
             drawWin(g);
         } else {
             drawLose(g);

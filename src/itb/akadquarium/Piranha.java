@@ -13,30 +13,105 @@ import java.util.Random;
  * eats itb.akadquarium.Guppy.
  */
 public class Piranha extends AquariumObject implements Fish {
+    /**
+     * targetX.
+     */
     private double targetX;
+    /**
+     * targetY.
+     */
     private double targetY;
+    /**
+     * targetFood.
+     */
     private Guppy targetFood;
+    /**
+     * hunger.
+     */
     private int hunger;
+    /**
+     * lastHungerTime.
+     */
     private long lastHungerTime;
+    /**
+     * lastMoveTime.
+     */
     private long lastMoveTime;
+    /**
+     * listCoin.
+     */
     private static LinkedList<Coin> listCoin;
+    /**
+     * listGuppy.
+     */
     private static LinkedList<Guppy> listGuppy;
+    /**
+     * listPiranha.
+     */
     private static LinkedList<Piranha> listPiranha;
+    /**
+     * Hunger time.
+     */
     private static final int HUNGER_TIME = 30;
+    /**
+     * Max hunger.
+     */
     private static final int MAX_HUNGER = 60;
+    /**
+     * Velocity.
+     */
     private static final double VELOCITY = 1;
+    /**
+     * Guppy price.
+     */
     private static final int GUPPY_PRICE = 15;
+    /**
+     * Radius.
+     */
     private static final double RADIUS = 40;
+    /**
+     * piranhaLeft.
+     */
     private static BufferedImage piranhaLeft;
+    /**
+     * piranhaRight.
+     */
     private static BufferedImage piranhaRight;
+    /**
+     * Max Target X.
+     */
     private static final int MAX_TARGET_X = 1000;
+    /**
+     * Offset X.
+     */
     private static final int OFFSET_X = 40;
+    /**
+     * Max target y.
+     */
     private static final int MAX_TARGET_Y = 550;
+    /**
+     * Y lower bound.
+     */
     private static final int Y_LOWER_BOUND = 120;
+    /**
+     * Hungry speed multiplier.
+     */
     private static final double HUNGRY_SPEED_MULTIPLIER = 1.5;
+    /**
+     * Decrease hunger time.
+     */
     private static final int DECREASE_HUNGER_TIME = 1000;
+    /**
+     * Move time.
+     */
     private static final int MOVE_TIME = 3000;
+    /**
+     * Screen width.
+     */
     private static final int SCREEN_WIDTH = 1080;
+    /**
+     * Minimum distance.
+     */
     private static final int MINIMUM_DISTANCE = 200;
 
     /**

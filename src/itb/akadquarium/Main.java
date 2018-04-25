@@ -19,12 +19,33 @@ import java.io.IOException;
  * This is the controller class to run another classes during the game
  */
 public final class Main {
+    /**
+     * jFrame.
+     */
     private static JFrame jFrame;
+    /**
+     * audioIn.
+     */
     private static AudioInputStream audioIn;
+    /**
+     * Window Width size.
+     */
     private static final int WINDOW_WIDTH = 1100;
+    /**
+     * Window Height size.
+     */
     private static final int WINDOW_HEIGHT = 720;
+    /**
+     * Nano seconds.
+     */
     private static final int NANO_SECONDS = 1000000;
+    /**
+     * Thousand.
+     */
     private static final int THOUSAND = 1000;
+    /**
+     * fps.
+     */
     private static final int FRAME_PER_SECOND = 45;
 
     /**

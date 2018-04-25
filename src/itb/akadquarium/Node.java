@@ -7,7 +7,13 @@ package itb.akadquarium;
  * @param <T> is the parameter type
  */
  public class Node<T> {
+    /**
+     * data.
+     */
     private T data;
+    /**
+     * pointer to next.
+     */
     private Node<T> next;
     /**
       * Instantiate itb.akadquarium.Node.

@@ -12,10 +12,25 @@ import java.awt.image.BufferedImage;
  * using the coin while the game is running.
  */
 public class FishFood extends AquariumObject {
+    /**
+     * velocity.
+     */
     private static final double VELOCITY = 0.5;
+    /**
+     * radius.
+     */
     private static final double RADIUS = 5;
+    /**
+     * low boundary.
+     */
     private static final double LOW_BOUNDARY = 600;
+    /**
+     * fish food image.
+     */
     private static BufferedImage image;
+    /**
+     * list fish food.
+     */
     private static LinkedList<FishFood> listFishFood;
 
     /**

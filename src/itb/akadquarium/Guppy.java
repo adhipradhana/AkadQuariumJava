@@ -17,40 +17,137 @@ public class Guppy extends AquariumObject implements Fish {
      * variable state is itb.akadquarium.Guppy condition.
      */
     private int state;
+    /**
+     * hunger.
+     */
     private int hunger;
+    /**
+     * timesEaten.
+     */
     private int timesEaten;
+    /**
+     * last move time.
+     */
     private long lastMoveTime;
+    /**
+     * last drop time.
+     */
     private long lastDropTime;
+    /**
+     * last hunger time.
+     */
     private long lastHungerTime;
+    /**
+     * target x.
+     */
     private double targetX;
+    /**
+     * target y.
+     */
     private double targetY;
+    /**
+     * target food.
+     */
     private FishFood targetFood;
+    /**
+     * list coin.
+     */
     private static LinkedList<Coin> listCoin;
+    /**
+     * list guppy.
+     */
     private static LinkedList<Guppy> listGuppy;
+    /**
+     * list fish food.
+     */
     private static LinkedList<FishFood> listFishFood;
+    /**
+     * drop time.
+     */
     private static final int DROP_TIME = 15;
+    /**
+     * max hunger.
+     */
     private static final int MAX_HUNGER = 60;
+    /**
+     * hunger time.
+     */
     private static final int HUNGER_TIME = 30;
+    /**
+     * drop coin value.
+     */
     private static final int COIN_DROP_VALUE = 7;
+    /**
+     * radius.
+     */
     private static final double RADIUS = 40;
+    /**
+     * velocity.
+     */
     private static final double VELOCITY = 1;
-
+    /**
+     * max target x.
+     */
     private static final int MAX_TARGET_X = 1000;
+    /**
+     * offset x.
+     */
     private static final int OFFSET_X = 40;
+    /**
+     * max targert y.
+     */
     private static final int MAX_TARGET_Y = 550;
+    /**
+     * y lower bound.
+     */
     private static final int Y_LOWER_BOUND = 120;
+    /**
+     * state bound.
+     */
     private static final int STATE_BOUND = 3;
+    /**
+     * hungry speed multiplier.
+     */
     private static final double HUNGRY_SPEED_MULTIPLIER = 1.5;
+    /**
+     * decrease hunger time.
+     */
     private static final int DECREASE_HUNGER_TIME = 1000;
+    /**
+     * move time.
+     */
     private static final int MOVE_TIME = 3000;
+    /**
+     * screen width.
+     */
     private static final int SCREEN_WIDTH = 1080;
+    /**
+     * minimum distance.
+     */
     private static final int MINIMUM_DISTANCE = 200;
-
+    /**
+     * state one left guppy image.
+     */
     private static BufferedImage stateOneGuppyLeft;
+    /**
+     * state one right guppy image.
+     */
     private static BufferedImage stateOneGuppyRight;
+    /**
+     * state two left guppy image.
+     */
     private static BufferedImage stateTwoGuppyLeft;
+    /**
+     * state two right guppy image.
+     */
     private static BufferedImage stateTwoGuppyRight;
+    /**
+     * state three left guppy image.
+     */
     private static BufferedImage stateThreeGuppyLeft;
+    /**
+     * state three right guppy image.
+     */
     private static BufferedImage stateThreeGuppyRight;
 
     /**
