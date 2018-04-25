@@ -6,7 +6,10 @@ TUGAS BESAR 2 OOP - K02D
 
 CARA MENJALANKAN PROGRAM
 	1. Buka terminal pada folder src
-	2. Jalankan perintah "make"
+	2. Jalankan perintah berikut:
+		- make
+		- cd out
+		- java itb.akadquarium.Main
 
 HAL-HAL YANG HARUS DIPERHATIKAN
 	1. Minimum menggunakan JDK versi 1.8
