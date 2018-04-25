@@ -349,7 +349,7 @@ public class Aquarium extends JPanel implements MouseListener {
     /**
      * Get list of itb.akadquarium.Guppy.
      *
-     * @return itb.akadquarium.LinkedList<itb.akadquarium.Guppy>
+     * @return itb.akadquarium.LinkedList
      */
     public LinkedList<Guppy> getListGuppy() {
         return this.listGuppy;
@@ -358,7 +358,7 @@ public class Aquarium extends JPanel implements MouseListener {
     /**
      * Get list of itb.akadquarium.Piranha.
      *
-     * @return itb.akadquarium.LinkedList<itb.akadquarium.Piranha>
+     * @return itb.akadquarium.LinkedList
      */
     public LinkedList<Piranha> getListPiranha() {
         return this.listPiranha;
@@ -367,7 +367,7 @@ public class Aquarium extends JPanel implements MouseListener {
     /**
      * Get list of itb.akadquarium.Coin.
      *
-     * @return itb.akadquarium.LinkedList<itb.akadquarium.Coin>
+     * @return itb.akadquarium.LinkedList
      */
     public LinkedList<Coin> getListCoin() {
         return this.listCoin;
@@ -376,7 +376,7 @@ public class Aquarium extends JPanel implements MouseListener {
     /**
      * Get list of itb.akadquarium.FishFood.
      *
-     * @return itb.akadquarium.LinkedList<itb.akadquarium.FishFood>
+     * @return itb.akadquarium.LinkedList
      */
     public LinkedList<FishFood> getListFishFood() {
         return listFishFood;
