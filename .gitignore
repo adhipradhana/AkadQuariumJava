@@ -1,0 +1,7 @@
+*.class
+main
+oopquarium
+.DS_Store
+.vscode
+.idea/workspace.xml
+*.dat
