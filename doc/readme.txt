@@ -8,4 +8,4 @@ CARA MENJALANKAN PROGRAM
 	1. 
 
 HAL-HAL YANG HARUS DIPERHATIKAN
-	1.
+	1. Minimum menggunakan JDK versi 1.8
